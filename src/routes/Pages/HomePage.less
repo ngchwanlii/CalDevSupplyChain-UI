@@ -1,0 +1,199 @@
+@import '../../index.less';
+@import '../../theme.less';
+
+@base-bg-white-color: white;
+@base-bg-blue-color: #1890ff;
+@section-title-font-size: 28px;
+@sub-text-color: #697b8c;
+@footer-bg-grey-color: #21242a;
+
+.layout {
+  .appHeader {
+    position: relative;
+    box-shadow: @box-shadow;
+    margin-bottom: 1px;
+    background-color: @base-bg-white-color;
+
+    @media (max-width: @screen-xs-max) {
+      height: 100%;
+
+      .navMenuBorderTop {
+        border-top: 0.5px solid lightgrey;
+      }
+
+      .logoNav {
+        margin-bottom: 50px;
+      }
+
+      .signupButtonContainer {
+      }
+
+      .loginButtonContainer {
+      }
+    }
+
+    @media (min-width: @screen-xl) {
+      .signupButtonContainer {
+        margin-left: 5rem;
+      }
+
+      .loginButtonContainer {
+        margin-right: 5rem;
+      }
+    }
+
+    .nav {
+      &:hover {
+        border-bottom: medium solid @base-bg-blue-color;
+      }
+      @media (max-width: @screen-xs-max) {
+        &:hover {
+          border-bottom: none;
+        }
+      }
+    }
+
+    .navMenu {
+      color: black;
+      @media (max-width: @screen-xs-max) {
+        display: block;
+        width: 100vw;
+        height: 100%;
+        border-bottom: 0.5px solid lightgrey;
+        text-align: center;
+      }
+      &:hover {
+        color: @base-bg-blue-color;
+      }
+    }
+
+    .logo {
+    }
+  }
+
+  .homeBannerContainer {
+    background: white;
+    height: 100%;
+
+    .homeBannerTextRowContainer {
+      min-height: 500px;
+
+      .homeBannerTextColContainer {
+        min-width: 500px;
+      }
+    }
+
+    // title line animation section
+    .homeBannerTitleLineContainer {
+      height: 2px;
+      width: 100%;
+      overflow: hidden;
+
+      @media (max-width: @screen-xs) {
+        //background-color: red;
+        width: 70%;
+        transform: translateX(5em);
+      }
+
+      .homeBannerTitleLine {
+        height: 100%;
+        width: 64px;
+        animation: bannerTitleLine 3s ease-in-out 0s infinite;
+        background: linear-gradient(
+          90deg,
+          rgba(24, 144, 255, 0) 0,
+          @base-bg-blue-color
+        );
+      }
+
+      @keyframes bannerTitleLine {
+        100% {
+          transform: translateX(400px);
+        }
+      }
+    }
+
+    .homeBannerHeading {
+      font-size: 3em;
+      @media (max-width: @screen-lg) {
+        text-align: center;
+        font-size: 2em;
+      }
+    }
+
+    .homeBannerSubHeading {
+      font-size: 1.5em;
+      @media (max-width: @screen-lg) {
+        text-align: center;
+        font-size: 1em;
+      }
+    }
+
+    .homeBannerIconContainer {
+      min-height: 500px;
+    }
+  }
+
+  .partnersBannerContainer {
+    background: @base-bg-blue-color;
+    min-height: 200px;
+
+    .partnersBannerTitleContainer {
+      h2 {
+        color: white;
+      }
+      height: 100%;
+      text-align: center;
+      padding-top: 2em;
+      padding-bottom: 1em;
+    }
+
+    .partnersLogoContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      resize: both;
+      overflow: auto;
+
+      .partnersLogo {
+        width: 50%;
+        padding: 20px;
+        resize: both;
+        overflow: auto;
+      }
+    }
+  }
+
+  .featuresContainer {
+    .featuresTitleContainer {
+      text-align: center;
+      padding-top: 5em;
+      padding-bottom: 5em;
+    }
+
+    .featuresCardBlock {
+      display: block;
+      width: 50%;
+      margin: auto;
+
+      @media (min-width: @screen-lg) and (max-width: @screen-xl) {
+        width: 60%;
+      }
+
+      @media (min-width: @screen-sm-max) and (max-width: @screen-lg) {
+        width: 100%;
+      }
+    }
+  }
+
+  .appFooter {
+    display: flex;
+    color: white;
+    background-color: @footer-bg-grey-color;
+    justify-content: center;
+    align-self: center;
+    resize: both;
+    overflow: auto;
+    width: 100%;
+  }
+}
